@@ -1,0 +1,98 @@
+<html>
+<head>
+<link rel="stylesheet" href="styles.css">
+       </head>
+<body>
+<header>
+<div class="topnav">
+<a href="#home">HOME</a>
+<a href="#register">REGISTER</a>
+<a href="#login">LOGIN</a>
+<a href="#aboutus">ABOUTUS</a>
+</div>
+</header>
+<main>
+<section id="home">
+<h1>WELCOME TO SIMATS ENGINEERING COLLEGE<b><h1>
+<img src="save.png" alt="Simats ">
+</section>
+<section id="register">
+<h1>REGISTER<b></h2>
+<form onsubmit="return validateForm()">
+username   &emsp;&emsp;&emsp;<input type="text" id="uname" name="uname" requried> <span id="u_er" style="color:red"></span><br>
+password &emsp;&emsp;<input type="password" id="pas" name="pass" requried><span id ="pass" style="color:red"></span><br>
+confirmpassword &emsp;<input type="password" id="conpass" name="conpass"><span id="conpa" style="color:red"></span><br>
+<input type="submit" value="submit">
+</form>
+</section>
+<section id="login">
+<h1>Login<b></h1>
+<form>
+name &emsp;<input type="text" id="name" name="name"><br>
+Registernumber &emsp;<input type="text" id="regno" name="regno"><br>
+Email &emsp;<input type="email" id="email" name="email"><br>
+phonenumber &emsp;<input type="text" id="phno" name="phno"><br>
+Dept name:
+<select name=department>
+<option value="cse">CSE</option>
+<option value="aids">AIDS</option>
+<option value="eee">EEE</option>
+<option value="ece">ECE</option>
+</select><br>
+YEAR:
+<select name="year">
+<option value="first">FIRSTYEAR</option>
+<option value="second">SECONDYEAR</option>
+<option value="third">THIRDYEAR</option>
+<option value="fourth">Fourth YEAR</option>
+</select><br>
+<textarea rows="5" cols="40" id="feedback" required>FEEDBACK</textarea><br>
+<input type="submit" value="submit">
+</form>
+</section>
+<h1>ABOUTME<b></h1>
+<section id="aboutus">
+<div class="container">
+name:Ch.pradeep<br>
+regno:192210188<br>
+phon:6301043527<br>
+email:pradeepchemirthipalli@gmail.com<br>
+</div>
+</section>
+</main>
+<footer>
+<p>@copyrights 2024 Pradeep</p>
+</footer>
+<script>
+function validateForm() {
+const nameRegex = /^[a-z]{9}$/; 
+const passwordRegex = /^[a-zA-Z0-9@_|^-]{8,}$/; 
+let status = true;
+const username = document.getElementById("uname").value;
+if (!nameRegex.test(username)) {
+document.getElementById("u_er").innerHTML = "!Username is invalid. It must be exactly 9 lowercase letters.";
+status = false;
+} else {
+document.getElementById("u_er").innerHTML = "";
+}
+const password = document.getElementById("pas").value;
+if (!passwordRegex.test(password)) {
+document.getElementById("pass").innerHTML = "Password must be at least 8 characters long";
+status = false;
+} else {
+document.getElementById("pass").innerHTML = "";
+}
+const confirmPassword = document.getElementById("conpass").value;
+if (password !== confirmPassword) {
+document.getElementById("conpa").innerHTML = "Passwords must match.";
+status = false;
+} else {
+document.getElementById("conpa").innerHTML = "";
+}
+
+return status;
+}
+</script>
+
+</body>
+</html>
